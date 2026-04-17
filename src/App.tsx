@@ -1,6 +1,7 @@
 import { type IPage, Renderer, SduiProvider } from "fable-ui";
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router";
+import { Header } from "./components/Header";
 
 function App() {
   const [ui, setUi] = useState<IPage[]>([]);
@@ -15,19 +16,19 @@ function App() {
   return (
     <SduiProvider>
       <div className="flex flex-col h-screen items-center justify-center">
+        <Header />
         <div className="flex-1 max-w-7xl w-full">
-          <div className="flex items-center justify-between border-b py-4">
-            <h1 className="text-2xl font-bold">SDUI Example</h1>
-          </div>
-          <Routes>
-            {ui.map((component: IPage) => (
-              <Route
-                key={component.route}
-                path={component.route}
-                element={<Renderer ui={component.ui} />}
-              />
-            ))}
-          </Routes>
+          <main className="p-4">
+            <Routes>
+              {ui.map((component) => (
+                <Route
+                  key={component.route}
+                  path={component.route}
+                  element={<Renderer ui={component.ui} />}
+                />
+              ))}
+            </Routes>
+          </main>
         </div>
       </div>
     </SduiProvider>
