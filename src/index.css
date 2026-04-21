@@ -1,4 +1,1 @@
-@import "tailwindcss";
 @import "fable-ui/styles.css";
-@source "./**/*.ts";
-@source "./**/*.tsx";
