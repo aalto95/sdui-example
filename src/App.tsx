@@ -7,7 +7,7 @@ function App() {
   const [ui, setUi] = useState<IPage[]>([]);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_SDUI_ORCHESTRATOR_URL}/ui`)
+    fetch(`${import.meta.env.VITE_API_URL}/ui`)
       .then((response) => response.json())
       .then((data) => setUi(data.ui))
       .catch((error) => console.error("Error:", error));
