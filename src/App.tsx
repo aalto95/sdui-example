@@ -19,9 +19,9 @@ function App() {
 
   return (
     <SduiProvider>
-      <div className="flex flex-col min-h-screen items-center justify-center">
+      <div className="flex min-h-screen min-h-dvh flex-col">
         <Header />
-        <div className="flex-1 flex flex-col max-w-7xl w-full h-full p-4">
+        <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col p-4">
           <Routes>
             {ui.length &&
               !isLoading &&
